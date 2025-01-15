@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+build/
+*.sh
+*.egg-info/
+
+test/
+Session.vim
