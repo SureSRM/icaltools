@@ -1,16 +1,16 @@
 from setuptools import setup
 
 setup(
-    name='ical',
+    name='icaltools',
     version='0.1',
-    packages=['ical'],
+    packages=['icaltools'],
     install_requires=[
         # List your dependencies here
-        'ics',
+        'ics==0.8.0.dev0',
     ],
     entry_points={
         'console_scripts': [
-            'ical=ical.cli:main',  # Adjust as needed
+            'icaltools=icaltools.cli:main',  # Adjust as needed
         ],
     },
 )
