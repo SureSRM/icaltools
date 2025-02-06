@@ -27,25 +27,25 @@ pipx install .
 
 **Filter (grep)**
 ```shell
-ical grep < input.ics > output.ics "pattern1|pattern2"
+icaltools grep < input.ics > output.ics "pattern1|pattern2"
 ```
 
 **Concat (cat)**
 ```shell
-ical cat file1.ics file2.ics > output.ics
+icaltools cat file1.ics file2.ics > output.ics
 ```
 
 **Summary**
 ```shell
-ical summary < input.ics
+icaltools summary < input.ics
 ```
 
 **Combined**
 ```shell
-ical cat file1.ics file2.ics | ical grep "pattern1|pattern2" > output.ics | ical summary
+icaltools cat file1.ics file2.ics | icaltools grep "pattern1|pattern2" > output.ics | icaltools summary
 ```
 
-_Bonus:_ You can pipe the output of `ical summary` to [glow](https://github.com/charmbracelet/glow) for a better markdown rendering or [pandoc](https://github.com/jgm/pandoc) for a PDF conversion.
+_Bonus:_ You can pipe the output of `icaltools summary` to [glow](https://github.com/charmbracelet/glow) for a better markdown rendering or [pandoc](https://github.com/jgm/pandoc) for a PDF conversion.
 
 ```shell
 ... | glow -w 140
