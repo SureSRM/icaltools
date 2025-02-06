@@ -9,7 +9,17 @@ It allows to:
 
 ## Install
 
+**Recomended:** Using [uv](https://github.com/astral-sh/uv) package manager:
+
 ```shell
+uv tool install git+https://github.com/SureSRM/icaltools
+```
+
+Using pipx locally:
+
+```shell
+git clone https://github.com/SureSRM/icaltools
+cd icaltools
 pipx install .
 ```
 
