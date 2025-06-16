@@ -2,14 +2,17 @@ import sys
 import datetime
 from ics import Calendar
 
+
 def _sort_by_date(c: Calendar):
     c.events.sort(key=lambda e: e.timespan.begin_time or datetime.datetime.max)
+
 
 def _input_calendar() -> Calendar:
     """Reads the calendar from stdin"""
     c = Calendar(sys.stdin.read())
     _sort_by_date(c)
     return c
+
 
 def _output_calendar(c: Calendar):
     """Writes the calendar to stdout, sorted by date and time"""
@@ -89,7 +92,8 @@ def rename(fix, filename, prefix, suffix):
 
         if len(names) != len(output_calendar.events):
             print(
-                "The number of events in the calendar and the number of names in the file do not match"
+                f"The number of events in the calendar {len(output_calendar.events)} and the number of names {len(names)} in the file do not match",
+                file=sys.stderr,
             )
             sys.exit(1)
 
@@ -112,11 +116,11 @@ def rename(fix, filename, prefix, suffix):
 
 
 def usage():
-    print("Usage: ical COMMAND [ARGS]")
-    print("Commands:")
-    print("  grep < input.ics > output.ics 'Pattern1|Pattern2'")
-    print("  cat file1.ics file2.ics")
-    print("  summary < input.ics")
+    print("Usage: ical COMMAND [ARGS]", file=sys.stderr)
+    print("Commands:", file=sys.stderr)
+    print("  grep < input.ics > output.ics 'Pattern1|Pattern2'", file=sys.stderr)
+    print("  cat file1.ics file2.ics", file=sys.stderr)
+    print("  summary < input.ics", file=sys.stderr)
 
 
 def main():
